@@ -1,0 +1,22 @@
+{
+    "exclude": ["**/tests", "**/test", "dist", "node_modules"],
+    "include": ["src/**/*", "src/**/*.json", "vite.config.ts"],
+    "compilerOptions": {
+        "target": "ES2022",
+        "lib": ["ES2022", "DOM"],
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "jsx": "react-jsx",
+        "incremental": false,
+        "resolveJsonModule": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "composite": false,
+        "declaration": false,
+        "noEmit": true,
+        "skipLibCheck": true,
+        "types": ["vite/client", "node"]
+    }
+}

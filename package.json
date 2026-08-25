@@ -1,0 +1,39 @@
+{
+    "name": "example-overrides",
+    "version": "11.53.0",
+    "private": true,
+    "description": "Minimal GoodData embedded insight example",
+    "author": "",
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "preview": "vite preview",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@gooddata/sdk-backend-tiger": "11.53.0",
+        "@gooddata/sdk-model": "11.53.0",
+        "@gooddata/sdk-ui": "11.53.0",
+        "@gooddata/sdk-ui-charts": "11.53.0",
+        "@gooddata/sdk-ui-dashboard": "11.53.0",
+        "@gooddata/sdk-ui-ext": "11.53.0",
+        "@gooddata/sdk-ui-filters": "11.53.0",
+        "@gooddata/sdk-ui-geo": "11.53.0",
+        "@gooddata/sdk-ui-kit": "11.53.0",
+        "@gooddata/sdk-ui-pivot": "11.53.0",
+        "react": "19.1.1",
+        "react-dom": "19.1.1"
+    },
+    "devDependencies": {
+        "@types/node": "^22.20.1",
+        "@types/react": "19.1.11",
+        "@types/react-dom": "19.1.7",
+        "@vitejs/plugin-react": "6.1.0",
+        "typescript": "5.9.3",
+        "vite": "8.2.2"
+    },
+    "overrides": {
+        "postcss": "8.5.26"
+    }
+}
