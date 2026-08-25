@@ -1,0 +1,38 @@
+src/PivotDateControls.tsx
+  s_204f56f5262bbf::t_1026bb6ea520a7 1-12,14-20,26-35,37-56,58,60-92,98-114,116-119,131-174,176-226,231-295
+  s_204f56f5262bbf::t_7a87f7f020d822 13,227-230
+  s_204f56f5262bbf::t_b1c1942b6d14f6 21-22,24-25,59
+  s_204f56f5262bbf::t_b2b561f411efe8 23,57
+  s_204f56f5262bbf::t_4628792f5dd5be 36,93-97,115,120-130,175
+src/index.css
+  s_204f56f5262bbf::t_7a87f7f020d822 143
+  s_204f56f5262bbf::t_1026bb6ea520a7 151-227
+src/App.tsx
+  s_204f56f5262bbf::t_1026bb6ea520a7 5,18,30-38,41
+src/CustomPivotTable.tsx
+  s_204f56f5262bbf::t_1026bb6ea520a7 3,20-21,169,173,289,430,432-436,463-467,477-483
+README.md
+  s_204f56f5262bbf::t_1026bb6ea520a7 55
+  s_204f56f5262bbf::t_b1c1942b6d14f6 54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "b04e7e79f2067780317aaeb2d7e474ce93f06689",
+  "prompts": {},
+  "humans": {
+    "h_0907ec034f4a17": {
+      "author": "kubow <kube.kubow@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_204f56f5262bbf": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03a08-e193-7432-81a6-ebd3b1dd1a38",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "kubow <kube.kubow@gmail.com>"
+    }
+  }
+}
