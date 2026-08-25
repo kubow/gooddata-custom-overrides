@@ -1,0 +1,105 @@
+README.md
+  s_204f56f5262bbf::t_d071e22d562f90 7,21,24,29,37-40
+  s_204f56f5262bbf::t_6baa8c28488bab 27,35-36
+  s_204f56f5262bbf::t_a723b0c2f4c236 10
+  s_204f56f5262bbf::t_a42fe53b48fda6 9
+  s_204f56f5262bbf::t_5fdba9c9b5b906 1-3,8,34
+  s_204f56f5262bbf::t_4be1ab7bb85ac0 25-26,32
+  s_204f56f5262bbf::t_4a74594650a126 4-6,11-20,22-23,28,30-31,41-47
+  s_204f56f5262bbf::t_6a852b7baff6a7 33
+.gitignore
+  s_204f56f5262bbf::t_95ecbd18ba28f7 5
+vite.config.ts
+  s_204f56f5262bbf::t_d071e22d562f90 5-8,10,16-28
+  s_204f56f5262bbf::t_6a852b7baff6a7 11-12,14,29-30
+  s_204f56f5262bbf::t_23a2e07f4bee21 50
+  s_204f56f5262bbf::t_4be1ab7bb85ac0 9,13
+  s_204f56f5262bbf::t_94c4797225c473 1-4,15,31-49,51-73
+src/index.css
+  s_204f56f5262bbf::t_8f75d24038b00b 71,76-80,86-101,106-107,117,125-138
+  s_204f56f5262bbf::t_5fdba9c9b5b906 11-12,15-17,20-68,141-152
+  s_204f56f5262bbf::t_6baa8c28488bab 69-70,72-75,81-85,102-105,108-116,118-124,139-140
+  s_204f56f5262bbf::t_a723b0c2f4c236 19
+  s_204f56f5262bbf::t_4a74594650a126 1-10,13-14,18,153
+src/App.tsx
+  s_204f56f5262bbf::t_4be1ab7bb85ac0 171
+  s_204f56f5262bbf::t_5fdba9c9b5b906 2,15,19-20,166,168,172-197,199-220
+  s_204f56f5262bbf::t_8f75d24038b00b 4-9,21-31,38,40-47,87-104,113-147
+  s_204f56f5262bbf::t_a723b0c2f4c236 16
+  s_204f56f5262bbf::t_f95f8aa8ddf03c 35,167
+  s_204f56f5262bbf::t_6baa8c28488bab 1,3,10-14,32-34,36-37,39,48-61,63-67,73-86,105-112,148-164,169,198,223-224
+  s_204f56f5262bbf::t_e6b17202aca9bf 62,68-72
+  s_204f56f5262bbf::t_2ce6b1372a6a11 17-18
+  s_204f56f5262bbf::t_a70a7ac21c8bb7 165
+  s_204f56f5262bbf::t_686d2ae528572f 170
+  s_204f56f5262bbf::t_d09a214ce9edcb 221-222
+.env.example
+  s_204f56f5262bbf::t_d071e22d562f90 1,5-6
+  s_204f56f5262bbf::t_4be1ab7bb85ac0 2-3
+  s_204f56f5262bbf::t_6baa8c28488bab 4
+package.json
+  s_6512c226660305::t_2212d65ab03090 9-11
+  s_204f56f5262bbf::t_dea07c67ae15a0 18,21-23
+  s_204f56f5262bbf::t_5fdba9c9b5b906 19
+  s_204f56f5262bbf::t_6baa8c28488bab 16
+  s_204f56f5262bbf::t_a723b0c2f4c236 20
+  s_6512c226660305::t_ac5f14231db04b 29,39
+  s_204f56f5262bbf::t_4a74594650a126 5,12,26
+  s_204f56f5262bbf::t_8b1745a160838c 36-37
+  s_204f56f5262bbf::t_6a852b7baff6a7 24
+  s_6512c226660305::t_3fd613d9d96a9f 32-34
+  s_204f56f5262bbf::t_301935ed56c808 2-4
+  s_204f56f5262bbf::t_539846867d0b9e 13-15
+  s_204f56f5262bbf::t_e5b33528a8fc1c 17
+  s_204f56f5262bbf::t_84d359753ee6a7 25
+  s_6512c226660305::t_a34722a1842591 30-31
+  s_204f56f5262bbf::t_c49ee1f499b00d 1,6-8,27-28,35,38
+src/backend.ts
+  s_204f56f5262bbf::t_4a74594650a126 1-3
+src/index.tsx
+  s_204f56f5262bbf::t_6a852b7baff6a7 7
+  s_204f56f5262bbf::t_4a74594650a126 1-3,11-19
+  s_204f56f5262bbf::t_dea07c67ae15a0 4-6,8-10
+tsconfig.json
+  s_6512c226660305::t_878f7b5e3f0740 2-19
+  s_6512c226660305::t_d91140b70d02fc 20
+  s_6512c226660305::t_49156c1d050666 1
+  s_6512c226660305::t_8ae99c42301372 21-22
+src/typings.d.ts
+  s_204f56f5262bbf::t_4be1ab7bb85ac0 1-9
+index.html
+  s_204f56f5262bbf::t_a723b0c2f4c236 8,13,16
+  s_6512c226660305::t_63c6f90be199d0 1-5,14-15,17-20
+  s_204f56f5262bbf::t_4a74594650a126 6-7,9-12
+package-lock.json
+  s_204f56f5262bbf::t_2eecfe8cd058e9 1-5968
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "3d331d30d5bebd127a968c0e6cbe8e9d76381a45",
+  "prompts": {},
+  "humans": {
+    "h_0907ec034f4a17": {
+      "author": "kubow <kube.kubow@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_204f56f5262bbf": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03a08-e193-7432-81a6-ebd3b1dd1a38",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "kubow <kube.kubow@gmail.com>"
+    },
+    "s_6512c226660305": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "38c14ae8-cd07-415e-a28c-d187b6d42dd6",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "kubow <kube.kubow@gmail.com>"
+    }
+  }
+}
