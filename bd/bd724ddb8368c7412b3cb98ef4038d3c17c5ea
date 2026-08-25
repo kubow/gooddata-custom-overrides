@@ -1,0 +1,34 @@
+src/index.css
+  s_204f56f5262bbf::t_38f7f4973298ec 125-421
+README.md
+  s_204f56f5262bbf::t_38acc7578d2315 46-49,51,53
+  s_204f56f5262bbf::t_fb5e93f5e05b39 50,52
+src/App.tsx
+  s_204f56f5262bbf::t_e72086dfd4e88e 15-18,27,37-41,234
+  s_204f56f5262bbf::t_38f7f4973298ec 22,67,177-182
+  s_204f56f5262bbf::t_0b9f86473eef85 28-36
+src/CustomPivotTable.tsx
+  s_204f56f5262bbf::t_d46274b17da633 95-101,116-126
+  s_204f56f5262bbf::t_fb5e93f5e05b39 1-94,102-115,127-464
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "bdbd724ddb8368c7412b3cb98ef4038d3c17c5ea",
+  "prompts": {},
+  "humans": {
+    "h_0907ec034f4a17": {
+      "author": "kubow <kube.kubow@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_204f56f5262bbf": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03a08-e193-7432-81a6-ebd3b1dd1a38",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "kubow <kube.kubow@gmail.com>"
+    }
+  }
+}
