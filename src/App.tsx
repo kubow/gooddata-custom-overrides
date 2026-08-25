@@ -12,13 +12,32 @@ import {
     useBackendStrict,
     useWorkspaceStrict,
 } from "@gooddata/sdk-ui";
-import { Dashboard } from "@gooddata/sdk-ui-dashboard";
+import {
+    Dashboard,
+    type IInsightBodyProps,
+} from "@gooddata/sdk-ui-dashboard";
 import { InsightView } from "@gooddata/sdk-ui-ext";
 
 import { backend } from "./backend.js";
+import { CustomPivotTable } from "./CustomPivotTable.js";
 
 type View = "visual" | "dashboard";
 const ALL_CATEGORIES = "all";
+
+function DashboardPivotTable(props: IInsightBodyProps) {
+    return (
+        <CustomPivotTable
+            insight={props.insight}
+            afterRender={props.afterRender}
+            onDataView={props.onDataView}
+            onError={props.onError}
+            onLoadingChanged={props.onLoadingChanged}
+        />
+    );
+}
+
+const insightBodyProvider = (insight: IInsight) =>
+    insightVisualizationUrl(insight) === "local:table" ? DashboardPivotTable : undefined;
 
 function categoryLabel(visualizationUrl: string): string {
     const name = visualizationUrl
@@ -45,6 +64,7 @@ function VisualPanel() {
         category === ALL_CATEGORIES
             ? insights
             : insights.filter((insight) => insightVisualizationUrl(insight) === category);
+    const selectedInsight = insights.find((insight) => insightId(insight) === selectedInsightId);
 
     useEffect(() => {
         let active = true;
@@ -154,8 +174,12 @@ function VisualPanel() {
                 {status === "ready" && insights.length === 0 ? (
                     <p className="empty-state">This workspace contains no saved visuals.</p>
                 ) : null}
-                {status === "ready" && selectedInsightId ? (
-                    <InsightView key={selectedInsightId} insight={selectedInsightId} />
+                {status === "ready" && selectedInsight ? (
+                    insightVisualizationUrl(selectedInsight) === "local:table" ? (
+                        <CustomPivotTable key={selectedInsightId} insight={selectedInsight} />
+                    ) : (
+                        <InsightView key={selectedInsightId} insight={selectedInsightId} />
+                    )
                 ) : null}
             </div>
         </section>
@@ -207,6 +231,7 @@ export function App() {
                                     <Dashboard
                                         dashboard={dashboardId}
                                         config={{ isEmbedded: true, isReadOnly: true }}
+                                        InsightBodyComponentProvider={insightBodyProvider}
                                     />
                                 ) : (
                                     <p className="empty-state">

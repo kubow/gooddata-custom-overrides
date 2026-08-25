@@ -43,6 +43,14 @@ The default insight is a pivot-style table. Other saved tables in the demo works
 
 `src/localization/en-US.ts` extends the SDK's default English bundle and overrides `visualization.emptyValue` with `-`. It is installed before React mounts, so the override applies to SDK components that create their own nested localization providers. The SDK formats empty headers as `(<translation>)`, producing `(-)`.
 
+## Custom pivot table
+
+Saved visuals with the `local:table` visualization type use `src/CustomPivotTable.tsx` instead of the SDK PivotTable. The override applies in both the Single visual tab and dashboard widgets.
+
+The component executes the effective insight definition, reads the complete result through the public data series and slices API, and renders a local HTML table. Drag a header grip to move any displayed column. Header clicks cycle through ascending, descending, and original order. The Running totals menu replaces selected measure columns with client-side cumulative values; those computed values are sortable.
+
+Running totals follow the backend result row order. Local sorting happens afterward, keeps value rows stable for equal values, and places backend subtotal or total rows after sorted value rows.
+
 ## Checks
 
 ```sh

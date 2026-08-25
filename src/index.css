@@ -122,6 +122,303 @@ body {
 .insight {
     min-width: 0;
     min-height: 0;
+    height: 100%;
+}
+
+.custom-pivot {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    color: #1f3545;
+}
+
+.pivot-controls {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 5px 12px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #dde4eb;
+    background: #fff;
+    font-size: 13px;
+}
+
+.running-total-menu {
+    position: relative;
+}
+
+.running-total-menu summary,
+.reset-table {
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #b0beca;
+    border-radius: 3px;
+    background: #fff;
+    color: #1f3545;
+    font: inherit;
+    line-height: 28px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.running-total-menu summary::-webkit-details-marker {
+    display: none;
+}
+
+.running-total-menu summary::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 8px;
+    border-top: 4px solid #6d7680;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    content: "";
+    vertical-align: middle;
+}
+
+.running-total-menu[open] summary,
+.running-total-menu summary:hover,
+.reset-table:hover:not(:disabled) {
+    border-color: #14b2e2;
+}
+
+.running-total-menu summary:focus-visible,
+.reset-table:focus-visible,
+.column-grip:focus-visible,
+.column-sort:focus-visible {
+    outline: 2px solid #14b2e2;
+    outline-offset: 1px;
+}
+
+.running-total-options {
+    position: absolute;
+    top: 34px;
+    left: 0;
+    display: grid;
+    width: max-content;
+    min-width: 220px;
+    max-width: min(420px, calc(100vw - 24px));
+    max-height: 260px;
+    overflow: auto;
+    padding: 6px;
+    border: 1px solid #b0beca;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 4px 12px rgb(31 53 69 / 16%);
+}
+
+.running-total-options label {
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    align-items: start;
+    gap: 7px;
+    padding: 7px 8px;
+    cursor: pointer;
+}
+
+.running-total-options label:hover {
+    background: #f5f8fa;
+}
+
+.running-total-options input {
+    margin: 2px 0 0;
+    accent-color: #14b2e2;
+}
+
+.control-note {
+    padding: 8px;
+    color: #6d7680;
+}
+
+.reset-table:disabled {
+    color: #a5adb5;
+    cursor: default;
+}
+
+.custom-pivot-scroll {
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
+}
+
+.custom-pivot table {
+    width: max-content;
+    min-width: 100%;
+    border-spacing: 0;
+    table-layout: fixed;
+    font-size: 13px;
+}
+
+.custom-pivot th,
+.custom-pivot td {
+    width: 180px;
+    min-width: 180px;
+    max-width: 280px;
+    height: 35px;
+    padding: 0 10px;
+    border-right: 1px solid #ebeff4;
+    border-bottom: 1px solid #ebeff4;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.custom-pivot th {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    height: 42px;
+    padding: 0;
+    background: #f5f8fa;
+    color: #465c6b;
+    font-weight: 600;
+}
+
+.custom-pivot th.drop-target {
+    box-shadow: inset 3px 0 #14b2e2;
+}
+
+.pivot-header {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    align-items: stretch;
+    height: 100%;
+}
+
+.column-grip,
+.column-sort {
+    border: 0;
+    background: transparent;
+    color: inherit;
+}
+
+.column-grip {
+    display: grid;
+    place-items: center;
+    padding: 0;
+    cursor: grab;
+}
+
+.column-grip:active {
+    cursor: grabbing;
+}
+
+.column-grip span,
+.column-grip span::before,
+.column-grip span::after {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #8796a3;
+    box-shadow: 6px 0 #8796a3;
+}
+
+.column-grip span {
+    position: relative;
+}
+
+.column-grip span::before,
+.column-grip span::after {
+    position: absolute;
+    left: 0;
+    content: "";
+}
+
+.column-grip span::before {
+    top: -6px;
+}
+
+.column-grip span::after {
+    top: 6px;
+}
+
+.column-sort {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 12px;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    padding: 0 10px 0 2px;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.column-sort:hover {
+    background: #ebf7fb;
+}
+
+.column-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sort-indicator {
+    position: relative;
+    width: 10px;
+    height: 12px;
+    opacity: 0.35;
+}
+
+.sort-indicator::before,
+.sort-indicator::after {
+    position: absolute;
+    left: 2px;
+    width: 0;
+    height: 0;
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
+    content: "";
+}
+
+.sort-indicator::before {
+    top: 1px;
+    border-bottom: 4px solid #465c6b;
+}
+
+.sort-indicator::after {
+    bottom: 1px;
+    border-top: 4px solid #465c6b;
+}
+
+.sort-indicator.asc::before,
+.sort-indicator.desc::after {
+    opacity: 1;
+}
+
+.sort-indicator.asc::after,
+.sort-indicator.desc::before {
+    opacity: 0.15;
+}
+
+.sort-indicator.asc,
+.sort-indicator.desc {
+    opacity: 1;
+}
+
+.custom-pivot tbody tr:hover td {
+    background: #f8fbfc;
+}
+
+.custom-pivot td.numeric-cell {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+}
+
+.custom-pivot .total-row td {
+    background: #f5f8fa;
+    font-weight: 600;
 }
 
 @media (max-width: 520px) {
