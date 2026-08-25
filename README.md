@@ -51,6 +51,8 @@ The component executes the effective insight definition, reads the complete resu
 
 Running totals follow the backend result row order. Local sorting happens afterward, keeps value rows stable for equal values, and places backend subtotal or total rows after sorted value rows.
 
+For every date dimension already used by a pivot, the toolbar also provides a Date field selector and Day, Week, Month, and Quarter granularity controls. The options come from the workspace date-dataset catalog; the first dataset tag is reused as the selector group. A choice only changes an in-memory copy of the insight by swapping that attribute's display form, so the saved insight and dashboard are not edited. Granularities that are unavailable for the selected date dataset are disabled. Dashboard pivots retain the dashboard's effective widget filters when executing the modified insight.
+
 ## Dashboard loading
 
 The backend is wrapped with `@gooddata/sdk-backend-base` in-memory caching. This deduplicates concurrent insight, display-form, attribute, settings, catalog, and other metadata reads even when the HTTP responses use `Cache-Control: no-store`. Execution caching is intentionally disabled so analytical data is not kept stale by this optimization.

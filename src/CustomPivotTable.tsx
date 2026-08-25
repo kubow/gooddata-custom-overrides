@@ -1,5 +1,6 @@
 import {
     type DragEvent,
+    type ReactNode,
     useEffect,
     useMemo,
     useRef,
@@ -15,6 +16,8 @@ import {
     useExecutionDataView,
     useWorkspaceStrict,
 } from "@gooddata/sdk-ui";
+
+import { usePivotDateConfiguration } from "./PivotDateControls.js";
 
 type SortDirection = "asc" | "desc";
 
@@ -163,9 +166,11 @@ function moveColumn(order: number[], fromColumn: number, toColumn: number): numb
 function PivotTableResult({
     table,
     afterRender,
+    dateControls,
 }: {
     table: TableModel;
     afterRender?: () => void;
+    dateControls?: ReactNode;
 }) {
     const canonicalOrder = useMemo(() => table.columns.map((_, index) => index), [table]);
     const [columnOrder, setColumnOrder] = useState(canonicalOrder);
@@ -281,6 +286,7 @@ function PivotTableResult({
     return (
         <div className="custom-pivot">
             <div className="pivot-controls">
+                {dateControls}
                 <details className="running-total-menu">
                     <summary>
                         Running totals
@@ -421,9 +427,13 @@ export function CustomPivotTable({
 }: CustomPivotTableProps) {
     const backend = useBackendStrict();
     const workspace = useWorkspaceStrict();
+    const dateConfiguration = usePivotDateConfiguration(insight);
     const preparedExecution = useMemo(
-        () => backend.workspace(workspace).execution().forInsight(insight),
-        [backend, insight, workspace],
+        () =>
+            dateConfiguration.loading
+                ? undefined
+                : backend.workspace(workspace).execution().forInsight(dateConfiguration.insight),
+        [backend, dateConfiguration.insight, dateConfiguration.loading, workspace],
     );
     const execution = useExecutionDataView({
         execution: preparedExecution,
@@ -450,7 +460,11 @@ export function CustomPivotTable({
         }
     }, [execution]);
 
-    if (execution.status === "loading" || execution.status === "pending") {
+    if (
+        dateConfiguration.loading ||
+        execution.status === "loading" ||
+        execution.status === "pending"
+    ) {
         return <p className="empty-state">Loading pivot table...</p>;
     }
     if (execution.status === "error" || table === null) {
@@ -460,5 +474,11 @@ export function CustomPivotTable({
         return <p className="empty-state">No data</p>;
     }
 
-    return <PivotTableResult table={table} afterRender={afterRender} />;
+    return (
+        <PivotTableResult
+            table={table}
+            afterRender={afterRender}
+            dateControls={dateConfiguration.controls}
+        />
+    );
 }

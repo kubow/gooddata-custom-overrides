@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import {
     type IInsight,
+    insightSetFilters,
     insightId,
     insightTitle,
     insightVisualizationUrl,
@@ -14,6 +15,7 @@ import {
 } from "@gooddata/sdk-ui";
 import {
     type IInsightBodyProps,
+    useWidgetFilters,
 } from "@gooddata/sdk-ui-dashboard";
 import { InsightView } from "@gooddata/sdk-ui-ext";
 
@@ -25,9 +27,18 @@ type View = "visual" | "dashboard";
 const ALL_CATEGORIES = "all";
 
 function DashboardPivotTable(props: IInsightBodyProps) {
+    const widgetFilters = useWidgetFilters(props.widget, props.insight);
+
+    if (widgetFilters.status === "pending" || widgetFilters.status === "running") {
+        return <p className="empty-state">Loading pivot table filters...</p>;
+    }
+    if (widgetFilters.status !== "success") {
+        return <p className="empty-state">Could not prepare the dashboard filters.</p>;
+    }
+
     return (
         <CustomPivotTable
-            insight={props.insight}
+            insight={insightSetFilters(props.insight, widgetFilters.result)}
             afterRender={props.afterRender}
             onDataView={props.onDataView}
             onError={props.onError}

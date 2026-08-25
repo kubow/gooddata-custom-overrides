@@ -140,6 +140,7 @@ body {
     z-index: 2;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
     min-height: 40px;
     padding: 5px 12px;
@@ -147,6 +148,83 @@ body {
     border-bottom: 1px solid #dde4eb;
     background: #fff;
     font-size: 13px;
+    overflow: visible;
+}
+
+.date-dimension-control {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    min-width: 0;
+}
+
+.date-dimension-control label {
+    display: grid;
+    gap: 2px;
+    min-width: 130px;
+}
+
+.date-dimension-control label > span {
+    color: #6d7680;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.date-dimension-control select {
+    width: 180px;
+    height: 30px;
+    padding: 0 28px 0 8px;
+    border: 1px solid #b0beca;
+    border-radius: 3px;
+    background: #fff;
+    color: #1f3545;
+    font: inherit;
+}
+
+.granularity-toggle {
+    display: flex;
+    height: 30px;
+}
+
+.granularity-toggle button {
+    min-width: 56px;
+    padding: 0 9px;
+    border: 1px solid #b0beca;
+    border-right-width: 0;
+    background: #fff;
+    color: #465c6b;
+    font: inherit;
+    cursor: pointer;
+}
+
+.granularity-toggle button:first-child {
+    border-radius: 3px 0 0 3px;
+}
+
+.granularity-toggle button:last-child {
+    border-right-width: 1px;
+    border-radius: 0 3px 3px 0;
+}
+
+.granularity-toggle button[aria-pressed="true"] {
+    border-color: #14b2e2;
+    background: #e8f7fc;
+    color: #1f3545;
+    font-weight: 600;
+}
+
+.granularity-toggle button:disabled {
+    background: #f5f8fa;
+    color: #a5adb5;
+    cursor: default;
+}
+
+.date-dimension-control select:focus-visible,
+.granularity-toggle button:focus-visible {
+    position: relative;
+    z-index: 1;
+    outline: 2px solid #14b2e2;
+    outline-offset: 1px;
 }
 
 .running-total-menu {
