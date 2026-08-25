@@ -12,6 +12,7 @@
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
+        "@gooddata/sdk-backend-base": "11.53.0",
         "@gooddata/sdk-backend-tiger": "11.53.0",
         "@gooddata/sdk-model": "11.53.0",
         "@gooddata/sdk-ui": "11.53.0",

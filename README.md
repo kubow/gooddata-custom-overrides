@@ -51,6 +51,14 @@ The component executes the effective insight definition, reads the complete resu
 
 Running totals follow the backend result row order. Local sorting happens afterward, keeps value rows stable for equal values, and places backend subtotal or total rows after sorted value rows.
 
+## Dashboard loading
+
+The backend is wrapped with `@gooddata/sdk-backend-base` in-memory caching. This deduplicates concurrent insight, display-form, attribute, settings, catalog, and other metadata reads even when the HTTP responses use `Cache-Control: no-store`. Execution caching is intentionally disabled so analytical data is not kept stale by this optimization.
+
+`src/OptimizedDashboard.tsx` changes the cold-load order: it loads the dashboard and referenced insights once, resolves the display forms and attributes used by those insights in two bulk requests, and only then mounts the SDK Dashboard. The loaded dashboard and references are passed into the component, avoiding a second dashboard/reference lookup. Successful preload promises remain cached for the browser session and failed loads are evicted for a later retry.
+
+The stock SDK has no public configuration switch that moves its background catalog loader ahead of widget rendering. A fully custom dashboard shell could control that sequence without using the alpha `references` and internal `persistedDashboard` inputs, but it would also have to recreate dashboard filters, layout, tabs, drills, cross-filtering, responsive sizing, and widget execution orchestration.
+
 ## Checks
 
 ```sh

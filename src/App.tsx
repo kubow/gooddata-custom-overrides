@@ -13,13 +13,13 @@ import {
     useWorkspaceStrict,
 } from "@gooddata/sdk-ui";
 import {
-    Dashboard,
     type IInsightBodyProps,
 } from "@gooddata/sdk-ui-dashboard";
 import { InsightView } from "@gooddata/sdk-ui-ext";
 
 import { backend } from "./backend.js";
 import { CustomPivotTable } from "./CustomPivotTable.js";
+import { OptimizedDashboard } from "./OptimizedDashboard.js";
 
 type View = "visual" | "dashboard";
 const ALL_CATEGORIES = "all";
@@ -228,9 +228,8 @@ export function App() {
                                 aria-label="Dashboard"
                             >
                                 {dashboardId ? (
-                                    <Dashboard
-                                        dashboard={dashboardId}
-                                        config={{ isEmbedded: true, isReadOnly: true }}
+                                    <OptimizedDashboard
+                                        dashboardId={dashboardId}
                                         InsightBodyComponentProvider={insightBodyProvider}
                                     />
                                 ) : (
