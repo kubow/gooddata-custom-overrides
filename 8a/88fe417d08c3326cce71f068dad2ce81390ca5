@@ -1,0 +1,30 @@
+src/localization/en-US.ts
+  s_204f56f5262bbf::t_feb825ceb27767 1-10
+src/index.tsx
+  s_204f56f5262bbf::t_feb825ceb27767 4,14
+  s_204f56f5262bbf::t_0cea1d2d893efe 15
+README.md
+  s_204f56f5262bbf::t_7cd09faf6e636e 44
+  s_204f56f5262bbf::t_feb825ceb27767 42-43,45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "8a88fe417d08c3326cce71f068dad2ce81390ca5",
+  "prompts": {},
+  "humans": {
+    "h_0907ec034f4a17": {
+      "author": "kubow <kube.kubow@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_204f56f5262bbf": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a03a08-e193-7432-81a6-ebd3b1dd1a38",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "kubow <kube.kubow@gmail.com>"
+    }
+  }
+}
