@@ -39,6 +39,10 @@ Do not use the development proxy as a production authentication layer. In produc
 
 The default insight is a pivot-style table. Other saved tables in the demo workspace include `all_products`, `all_customers`, and `percent_revenue_per_product_by_customer_and_category`.
 
+## Localization override
+
+`src/localization/en-US.ts` extends the SDK's default English bundle and overrides `visualization.emptyValue` with `-`. It is installed before React mounts, so the override applies to SDK components that create their own nested localization providers. The SDK formats empty headers as `(<translation>)`, producing `(-)`.
+
 ## Checks
 
 ```sh
